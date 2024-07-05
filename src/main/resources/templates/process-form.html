@@ -10,7 +10,8 @@
 <body>
     <h1>Dados do Studante</h1>
 
-    <p th:text="${student.firstName}"></p>
-    <p th:text="${student.lastName}"></p>
+    <p th:text=" 'First name: ' + ${student.firstName}"></p>
+    <p th:text=" 'Last name : '  + ${student.lastName}"></p>
+    <p th:text=" 'Country   : '  + ${student.country}"></p>
 </body>
 </html>

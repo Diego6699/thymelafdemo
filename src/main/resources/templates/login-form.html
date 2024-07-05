@@ -11,11 +11,23 @@
     <h1>Formulario</h1>
 
     <form th:action="@{/login}" th:object="${student}" method="post">
+
         <label name="firstName">First name: </label>
         <input type="text" th:field="*{firstName}"  id="firstName">
         <br>
+
         <label name="lastName">Last name: </label>
         <input type="text" th:field="*{lastName}"  id="lastName">
+        <br>
+
+        Countries
+
+        <select th:field="*{country}">
+
+            <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
+
+        </select>
+
         <br>
         <input type="submit" value="submit">
     </form>

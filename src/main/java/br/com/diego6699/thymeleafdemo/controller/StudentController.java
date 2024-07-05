@@ -15,7 +15,7 @@ public class StudentController {
     @GetMapping
     public String loginForm(Model model){
         model.addAttribute("student",new Student());
-        return "student-form";
+        return "login-form";
     }
 
     @PostMapping

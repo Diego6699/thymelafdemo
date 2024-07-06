@@ -21,6 +21,10 @@ public class Student {
     @NotNull(message = "is required")
     private Integer freePass;
 
+    @NotNull(message = "is required")
+    @Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
+    private String postalCode;
+
     public Student() {
     }
 
@@ -72,6 +76,14 @@ public class Student {
         this.freePass = freePass;
     }
 
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -81,6 +93,7 @@ public class Student {
                 ", language='" + language + '\'' +
                 ", favoriteSystems=" + favoriteSystems +
                 ", freePass=" + freePass +
+                ", postalCode='" + postalCode + '\'' +
                 '}';
     }
 }

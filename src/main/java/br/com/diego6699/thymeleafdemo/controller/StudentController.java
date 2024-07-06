@@ -18,11 +18,19 @@ public class StudentController {
     @Value("${countries}")
     private List<String> countries;
 
+    @Value("${languages}")
+    private List<String> languages;
+
+    @Value("${systems}")
+    private List<String> systems;
+
     @GetMapping
     public String loginForm(Model model){
 
         model.addAttribute("student",new Student());
         model.addAttribute("countries",countries);
+        model.addAttribute("languages",languages);
+        model.addAttribute("systems",systems);
         return "login-form";
     }
 

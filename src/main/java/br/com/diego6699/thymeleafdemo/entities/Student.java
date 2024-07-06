@@ -1,16 +1,15 @@
 package br.com.diego6699.thymeleafdemo.entities;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
     private String lastName;
     private String country;
+    private String language;
+    private List<String> favoriteSystems    ;
     public Student() {
-    }
-
-    public Student(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -37,11 +36,30 @@ public class Student {
         this.country = country;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public List<String> getFavoriteSystems() {
+        return favoriteSystems;
+    }
+
+    public void setFavoriteSystems(List<String> favoriteSystems) {
+        this.favoriteSystems = favoriteSystems;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", country='" + country + '\'' +
+                ", language='" + language + '\'' +
+                ", favoriteSystems=" + favoriteSystems +
                 '}';
     }
 }

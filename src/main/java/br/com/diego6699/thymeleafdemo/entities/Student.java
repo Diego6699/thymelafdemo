@@ -1,14 +1,26 @@
 package br.com.diego6699.thymeleafdemo.entities;
 
+import jakarta.validation.constraints.*;
+
 import java.util.List;
 
 public class Student {
 
     private String firstName;
-    private String lastName;
+
+    @NotNull(message = "is required")
+    @Size(min = 1,message = "is required")
+    private String lastName = "";
+
     private String country;
     private String language;
-    private List<String> favoriteSystems    ;
+    private List<String> favoriteSystems;
+
+    @Min(value = 0,message = "must be greater than or equal to zero")
+    @Max(value = 10,message = "must be less than or equal to 10")
+    @NotNull(message = "is required")
+    private Integer freePass;
+
     public Student() {
     }
 
@@ -52,6 +64,14 @@ public class Student {
         this.favoriteSystems = favoriteSystems;
     }
 
+    public Integer getFreePass() {
+        return freePass;
+    }
+
+    public void setFreePass(Integer freePass) {
+        this.freePass = freePass;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -60,6 +80,7 @@ public class Student {
                 ", country='" + country + '\'' +
                 ", language='" + language + '\'' +
                 ", favoriteSystems=" + favoriteSystems +
+                ", freePass=" + freePass +
                 '}';
     }
 }

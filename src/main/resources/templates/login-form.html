@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Formulario</title>
 </head>
 <body>
@@ -16,8 +17,9 @@
         <input type="text" th:field="*{firstName}"  id="firstName">
         <br>
 
-        <label name="lastName">Last name: </label>
+        <label name="lastName">Last name (*): </label>
         <input type="text" th:field="*{lastName}"  id="lastName">
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
         <br>
 
         Countries :
@@ -36,11 +38,16 @@
                th:value="${tempLang}"
                th:text="${tempLang}" />
         <br>
-        Systems:
-        <input type="checkbox" th:field="*{favoriteSystems}"
+        Systems :
+        <input type="checkbox"
+               th:field="*{favoriteSystems}"
                th:each="tempSystem : ${systems}"
                th:value="${tempSystem}"
                th:text="${tempSystem}" />
+        <br>
+        FreePass :
+        <input type="number" th:field="*{freePass}">
+        <span th:if="${#fields.hasErrors('freePass')}" th:errors="*{freePass}" class="error"></span>
 
         <br>
         <input type="submit" value="submit">

@@ -15,8 +15,10 @@
     <p th:text=" 'Country   : '  + ${student.country}"></p>
     <p th:text=" 'Language  : '  + ${student.language}"></p>
     <p>Systems: </p>
-    <ul>
-        <li th:each="tempSystem : ${student.favoriteSystems}" th:text="${tempSystem}" />
+    <ul th:each="tempSystem : ${student.favoriteSystems}">
+        <li th:text="${tempSystem}" />
     </ul>
+    Free pass :
+    <p th:text="${student.freePass}"></p>
 </body>
 </html>
